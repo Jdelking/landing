@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Chance to Win a PayPal Gift Card!</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font (Inter) for a modern look */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom Locker Styles */
+        #customLockerOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999; /* Ensure it's on top of everything else */
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        /* Initially hidden state for the locker */
+        #customLockerOverlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .locker-box {
+            background: #fff;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+            width: 500px;
+            position: relative;
+        }
+
+        /* Styles for the custom message box for email form */
+        #emailMessageBox {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            margin-top: 1rem;
+        }
+        #emailMessageBox.show {
+            opacity: 1;
+        }
+    </style>
+
+    <!-- Facebook Pixel Base Code - REMEMBER TO USE YOUR ACTUAL PIXEL ID -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '486941464480574'); // <-- Replace with YOUR_FACEBOOK_PIXEL_ID
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=486941464480574&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <!-- Custom Content Locker Overlay -->
+    <!-- Initially hidden, will appear after a delay -->
+    <div id="customLockerOverlay" class="hidden"> 
+        <div class="locker-box">
+            <h2 class="text-2xl sm:text-3xl font-bold text-red-600 mb-4">
+                🚨 Important Verification Required!
+            </h2>
+            <p class="text-gray-700 text-lg mb-6">
+                To access the exclusive PayPal Gift Card entry form, please complete a quick verification step.
+            </p>
+            <p class="text-gray-700 text-base mb-8">
+                Click the button below to proceed to the verification page where you can complete an offer.
+            </p>
+            <!-- This button links DIRECTLY to your CPAGrip PayPal Gift Card Offer URL -->
+            <a href="https://singingfiles.com/show.php?!u=2405010&id=69146" target="_blank" id="unlockButton"
+               class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 text-xl">
+               Unlock Your Entry Now!
+            </a>
+            <p class="text-gray-500 text-sm mt-4">
+                (This helps us prevent bots and ensure fair participation.)
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Landing Page Content -->
+    <div class="bg-white rounded-xl shadow-2xl p-8 max-w-2xl w-full text-center">
+        <!-- Main Headline -->
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-800 mb-6 leading-tight">
+            🚨 EXCLUSIVE: Canadian iPhone/iPad Users! <br> Your Chance to Win a <span class="text-green-600">$750</span> PayPal Gift Card!
+        </h1>
+
+        <!-- Image for the offer -->
+        <!-- URGENT: REPLACE THE 'src' ATTRIBUTE BELOW WITH YOUR CHOSEN PAYPAL IMAGE URL from GitHub -->
+        <!-- Example: src="https://raw.githubusercontent.com/your-username/your-repo-name/main/images%20(2).jpg" -->
+        <img src="https://placehold.co/600x300/e0e0e0/ffffff?text=Your+PayPal+Image+Here" alt="PayPal Gift Card Giveaway" class="w-full max-w-md mx-auto rounded-lg shadow-md mb-8">
+
+        <!-- Body Copy -->
+        <p class="text-gray-700 text-lg sm:text-xl mb-6">
+            Imagine what you could do with an extra $750 in your PayPal account! Pay bills, shop online, treat yourself – the possibilities are endless.
+        </p>
+        <p class="text-gray-700 text-lg sm:text-xl mb-6">
+            This is a limited-time opportunity for eligible Canadian iOS users.
+        </p>
+        <p class="text-gray-700 text-lg sm:text-xl mb-8 font-semibold">
+            To ensure fair participation and prevent bots, we require a quick verification step. Complete one short offer below to unlock the official entry form instantly.
+        </p>
+
+        <!-- 📧 Email Capture (simulated for front-end, requires backend for actual storage) -->
+        <div class="mb-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Get Notified of Future Giveaways!</h2>
+            <p class="text-blue-600 mb-4">Enter your email to get updates on more exclusive gift card opportunities.</p>
+            <form id="emailForm" class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <input type="email" name="email" placeholder="Your Email Address"
+                       class="w-full sm:w-2/3 p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
+                       required>
+                <button type="submit"
+                        class="w-full sm:w-1/3 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-md shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    Sign Me Up!
+                </button>
+            </form>
+            <!-- Custom Message Box for Email Form Feedback -->
+            <div id="emailMessageBox" class="p-3 bg-green-100 text-green-700 rounded-md hidden"></div>
+            <p class="text-gray-500 text-sm mt-2">By signing up, you agree to receive promotional emails from jdelassociate@gmail.com</p>
+        </div>
+
+        <!-- Privacy Policy Link -->
+        <p class="text-gray-500 text-sm mt-10">
+            <a href="/privacy-policy.html" class="underline hover:text-blue-600 transition duration-150 ease-in-out">Privacy Policy</a>
+        </p>
+        <!-- Disclaimer -->
+        <p class="text-gray-500 text-xs mt-2">
+            This is a promotional offer from our partners. Winners are notified directly by the offer provider.
+        </p>
+    </div>
+
+    <script>
+        // JavaScript for email form submission feedback
+        document.getElementById("emailForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent default form submission
+            const email = e.target.email.value;
+            const messageBox = document.getElementById("emailMessageBox");
+
+            console.log("Captured email for PayPal giveaway campaign:", email);
+
+            // Track the lead event
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+            }
+
+            // Display custom message
+            messageBox.textContent = "Thanks! You’ll be notified of future giveaways.";
+            messageBox.classList.remove('hidden'); // Make the message box visible
+            messageBox.classList.add('show'); // Add show class for fade-in effect
+
+            // Optional: Hide the message after a few seconds
+            setTimeout(() => {
+                messageBox.classList.remove('show');
+                messageBox.classList.add('hidden');
+            }, 5000); // Hide after 5 seconds
+
+            e.target.reset(); // Clear the form input
+        });
+
+        // Hide the custom locker when the unlock button is clicked
+        document.getElementById("unlockButton").addEventListener("click", function() {
+            document.getElementById("customLockerOverlay").classList.add("hidden");
+        });
+
+        // Make the custom locker appear after 3 seconds
+        window.onload = function() {
+            setTimeout(() => {
+                document.getElementById('customLockerOverlay').classList.remove('hidden');
+            }, 3000); // 3000 milliseconds = 3 seconds
+        };
+    </script>
+
+</body>
+</html>
